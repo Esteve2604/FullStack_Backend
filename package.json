@@ -13,6 +13,7 @@
     "url": "git+https://github.com/Esteve2604/FullStack_Backend.git"
   },
   "dependencies": {
+    "course": "^0.0.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
   },
