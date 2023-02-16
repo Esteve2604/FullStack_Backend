@@ -8,10 +8,20 @@ Content-Type: application/json
     "number": 14561561
 }
 ###
-POST http://localhost:3001/api/notes/
+POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
-    "content": "VS Code Rest",
-    "important": false
+    "name": "Buen Dia",
+    "number": 14561561
+}
+###
+GET http://localhost:3001/api/persons/ñ
+###
+PUT http://localhost:3001/api/persons/63e8d44c68bb964c15be8ed1
+Content-Type: application/json
+
+{
+    "name": "aldksidmsopo",
+    "number": 48754891
 }
