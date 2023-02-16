@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "rm -r build && cd ../FullStackOpenCourse/part2/guia_telefonica && npm run build && cp -r build ../FullStack_Backend",
+    "build:ui": "rm -r build && cd ../FullStackOpenCourse/part2/guia_telefonica && npm run build && cp -r build ../../../FullStack_Backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "repository": {
