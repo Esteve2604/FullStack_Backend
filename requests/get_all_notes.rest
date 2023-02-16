@@ -16,7 +16,7 @@ Content-Type: application/json
     "number": 14561561
 }
 ###
-GET http://localhost:3001/api/persons/ñ
+GET http://localhost:3001/api/persons/
 ###
 PUT http://localhost:3001/api/persons/63e8d44c68bb964c15be8ed1
 Content-Type: application/json
