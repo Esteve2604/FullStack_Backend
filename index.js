@@ -1,24 +1,21 @@
-const { response } = require('express')
 const express = require('express')
 const Person = require('./models/person')
-const { request } = require('http')
 var morgan = require('morgan')
 const cors = require('cors')
-const person = require('./models/person')
 const app = express()
 app.use(cors())
 app.use(express.json())
-morgan.token('type', (req, res) => { JSON.stringify(req.body) })
+morgan.token('type', (req) => { JSON.stringify(req.body) })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :type'))
-
-app.get('/api/persons', (request, response, next) => {
+app.use(express.static('build'))
+app.get('/api/persons', (response) => {
     Person.find({}).then(result => response.json(result))
 })
-app.get('/info', (request, response) => {
+/*app.get('/info', (response) => {
     response.send(`<p>PhoneBook has info for ${persons.length} people</p>
     <p>${new Date}</p>`
     )
-})
+})*/
 app.get('/api/persons/:id', (request, response, next) => {
     Person.findById(request.params.id).then(person => {
         if (person)
@@ -30,7 +27,7 @@ app.get('/api/persons/:id', (request, response, next) => {
 
 app.delete('/api/persons/:id', (request, response, next) => {
     Person.findByIdAndRemove(request.params.id)
-        .then(result => response.status(204).end())
+        .then(() => response.status(204).end())
         .catch(error => next(error))
 })
 app.post('/api/persons/', (request, response, next) => {

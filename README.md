@@ -1,0 +1,2 @@
+# Scripts
+npm install eslint
